@@ -268,6 +268,7 @@ int main()
     pattern_sequence_number = 0;
     music_buffer.stop();
     music_buffer.setLoop(true);
+    _initial_ball_speed = 500.0f;
 
     NEXT_LEVEL:
     SetPattern(bricks, brick_size, pattern_sequence_number);
@@ -402,7 +403,7 @@ int main()
             if (all_bricks_broken)
             {
                 pattern_sequence_number = (pattern_sequence_number + 1)%3;
-                _initial_ball_speed += 100.0f;
+                _initial_ball_speed += 200.0f;
                 win_sound.play();
                 goto NEXT_LEVEL;
             }
